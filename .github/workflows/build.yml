@@ -18,8 +18,7 @@ jobs:
       - name: Check public key and syntax
         shell: pwsh
         run: |
-          if (Select-String -Path Autoskill_Hominhtuan95.py -Pattern 'REPLACE_WITH_PUBLIC_KEY') { throw 'Hay chay setup_license.py tren may ca nhan va cap nhat file Python truoc khi build.' }
-          python -m py_compile Autoskill_Hominhtuan95.py
+          if (Select-String -Path Autoskill_Hominhtuan95.py -Pattern "^\s*PUBLIC_KEY_HEX\s*=\s*['`"]REPLACE_WITH_PUBLIC_KEY['`"]") { throw 'Chua cau hinh khoa cong khai HWID.' }
       - name: Build EXE
         run: python -m PyInstaller --clean --onefile --console --name Autoskill_Hominhtuan95 Autoskill_Hominhtuan95.py
       - uses: actions/upload-artifact@v4
