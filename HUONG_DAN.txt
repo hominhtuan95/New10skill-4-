@@ -1,0 +1,34 @@
+AUTOSKILL HOMINHTUAN95 - 4 CUA SO - HWID
+
+CHUC NANG:
+- 4 cua so game rieng, moi cua so 10 skill 1..9,0 + Tab + Space
+- F1 bat/tat khi AutoSkill duoc focus
+- Khoa kich hoat rieng theo HWID may
+- Khong co Auto Train toa do, khong co Auto HP
+
+BUOC 1 - MAY CA NHAN (Windows):
+1. Giai nen ZIP.
+2. Mo CMD trong thu muc vua giai nen.
+3. Chay: python -m pip install cryptography
+4. Chay: python setup_license.py
+5. Sao luu PRIVATE_LICENSE_KEY.pem an toan, KHONG tai len GitHub.
+
+BUOC 2 - GITHUB REPOSITORY MOI:
+1. Tai Autoskill_Hominhtuan95.py (da chay setup_license.py) len thu muc goc.
+2. Tai .github/workflows/build.yml len dung duong dan.
+3. KHONG tai PRIVATE_LICENSE_KEY.pem. Khong can tai setup_license.py hay issue_license.py.
+4. Actions > Build Autoskill Hominhtuan95 EXE > Run workflow.
+5. Tai artifact ZIP va giai nen de lay EXE.
+
+BUOC 3 - KICH HOAT:
+1. Chay EXE tren may can kich hoat, sao chep HWID hien ra.
+2. Tren may giu PRIVATE_LICENSE_KEY.pem, chay:
+   python issue_license.py HWID
+3. Sao chep ma kich hoat dai va dan vao cua so kich hoat.
+
+LUU Y:
+- Build dung --console de khi loi co the doc thong bao CMD.
+- Chay tren Windows 10/11; ban chua duoc thu truc tiep voi game.
+- Gui phim qua PostMessageW, mot so game co the khong nhan phim khi chay nen.
+- Thoi gian skill tinh bang mili giay, 50..180000 ms.
+- Khong phat hanh khoa rieng. Khong chay lai tao khoa moi khi da cap phep.
